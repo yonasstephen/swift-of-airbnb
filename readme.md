@@ -52,6 +52,7 @@ This is an ongoing project and a lot of things already planned!
 
 [Icons 8]
 
+[Let's Build That App]
 
 # License
 
@@ -65,4 +66,5 @@ Swift of Airbnb is licensed under MIT License
    [Raywenderlich]: <https://www.raywenderlich.com/>
    [Pexels]: <https://www.pexels.com>
    [Icons 8]: <https://icons8.com/>
+   [Let's Build That App]: <https://www.letsbuildthatapp.com/>
   
