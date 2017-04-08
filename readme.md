@@ -1,7 +1,7 @@
 
 <img src="http://i.imgur.com/r93YIiC.jpg" width="873">
 
-# Swift of AirBnb
+# Swift of Airbnb
 
 This is a self-taught project of learning Swift inspired by [Sam Lu's 100 Days of Swift] and [Allen Wong's 30 Days of Swift]. Trying to take the learning progress further by making some of Airbnb's screens, which in my opinion is one of the most beautifully-designed iOS App. Kudos to Airbnb for setting such high standard in iOS Development.
 
