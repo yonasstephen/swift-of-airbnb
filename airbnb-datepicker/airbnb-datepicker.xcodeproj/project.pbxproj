@@ -1,0 +1,390 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		75180D491E5E865200F03731 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75180D481E5E865200F03731 /* BaseCell.swift */; };
+		75180D4E1E5E86C600F03731 /* AirbnbDatePickerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75180D4D1E5E86C600F03731 /* AirbnbDatePickerHeader.swift */; };
+		75180D501E5EB1E000F03731 /* AirbnbDatePickerMonthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75180D4F1E5EB1E000F03731 /* AirbnbDatePickerMonthHeader.swift */; };
+		75180D521E5EB4E200F03731 /* AirbnbDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75180D511E5EB4E200F03731 /* AirbnbDatePickerCell.swift */; };
+		75180D551E5ECF2400F03731 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75180D541E5ECF2400F03731 /* Theme.swift */; };
+		75180D591E5F513500F03731 /* AirbnbDatePickerFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75180D581E5F513500F03731 /* AirbnbDatePickerFooter.swift */; };
+		75180D5B1E5FE80E00F03731 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75180D5A1E5FE80E00F03731 /* Date.swift */; };
+		756033E41E65D4D300B78E00 /* AirbnbDatePickerFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756033E31E65D4D300B78E00 /* AirbnbDatePickerFlowLayout.swift */; };
+		756033E61E680F4000B78E00 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756033E51E680F4000B78E00 /* Utility.swift */; };
+		75E074DF1E5DAE3500BE1060 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E074DE1E5DAE3500BE1060 /* AppDelegate.swift */; };
+		75E074E11E5DAE3500BE1060 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E074E01E5DAE3500BE1060 /* ViewController.swift */; };
+		75E074E41E5DAE3500BE1060 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75E074E21E5DAE3500BE1060 /* Main.storyboard */; };
+		75E074E61E5DAE3500BE1060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75E074E51E5DAE3500BE1060 /* Assets.xcassets */; };
+		75E074E91E5DAE3500BE1060 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75E074E71E5DAE3500BE1060 /* LaunchScreen.storyboard */; };
+		75E074F11E5DB6B200BE1060 /* AirbnbDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E074F01E5DB6B200BE1060 /* AirbnbDatePicker.swift */; };
+		75E074F31E5DBD3100BE1060 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E074F21E5DBD3100BE1060 /* UIColor.swift */; };
+		75E074F51E5DDCD700BE1060 /* AirbnbDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E074F41E5DDCD700BE1060 /* AirbnbDatePickerViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		75180D481E5E865200F03731 /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		75180D4D1E5E86C600F03731 /* AirbnbDatePickerHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirbnbDatePickerHeader.swift; sourceTree = "<group>"; };
+		75180D4F1E5EB1E000F03731 /* AirbnbDatePickerMonthHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirbnbDatePickerMonthHeader.swift; sourceTree = "<group>"; };
+		75180D511E5EB4E200F03731 /* AirbnbDatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirbnbDatePickerCell.swift; sourceTree = "<group>"; };
+		75180D541E5ECF2400F03731 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		75180D581E5F513500F03731 /* AirbnbDatePickerFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirbnbDatePickerFooter.swift; sourceTree = "<group>"; };
+		75180D5A1E5FE80E00F03731 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		756033E31E65D4D300B78E00 /* AirbnbDatePickerFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirbnbDatePickerFlowLayout.swift; sourceTree = "<group>"; };
+		756033E51E680F4000B78E00 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		75E074DB1E5DAE3500BE1060 /* airbnb-datepicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "airbnb-datepicker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		75E074DE1E5DAE3500BE1060 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		75E074E01E5DAE3500BE1060 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		75E074E31E5DAE3500BE1060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		75E074E51E5DAE3500BE1060 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		75E074E81E5DAE3500BE1060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		75E074EA1E5DAE3500BE1060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75E074F01E5DB6B200BE1060 /* AirbnbDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirbnbDatePicker.swift; sourceTree = "<group>"; };
+		75E074F21E5DBD3100BE1060 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		75E074F41E5DDCD700BE1060 /* AirbnbDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirbnbDatePickerViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		75E074D81E5DAE3500BE1060 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		75180D4A1E5E866800F03731 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				75E074F21E5DBD3100BE1060 /* UIColor.swift */,
+				75180D5A1E5FE80E00F03731 /* Date.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		75180D4B1E5E867A00F03731 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				75E074F01E5DB6B200BE1060 /* AirbnbDatePicker.swift */,
+				75180D511E5EB4E200F03731 /* AirbnbDatePickerCell.swift */,
+				756033E31E65D4D300B78E00 /* AirbnbDatePickerFlowLayout.swift */,
+				75180D581E5F513500F03731 /* AirbnbDatePickerFooter.swift */,
+				75180D4D1E5E86C600F03731 /* AirbnbDatePickerHeader.swift */,
+				75180D4F1E5EB1E000F03731 /* AirbnbDatePickerMonthHeader.swift */,
+				75180D481E5E865200F03731 /* BaseCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		75180D4C1E5E868400F03731 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				75E074F41E5DDCD700BE1060 /* AirbnbDatePickerViewController.swift */,
+				75E074E01E5DAE3500BE1060 /* ViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		75180D531E5ECF0D00F03731 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				75180D541E5ECF2400F03731 /* Theme.swift */,
+				756033E51E680F4000B78E00 /* Utility.swift */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
+		75E074D21E5DAE3500BE1060 = {
+			isa = PBXGroup;
+			children = (
+				75E074DD1E5DAE3500BE1060 /* airbnb-datepicker */,
+				75E074DC1E5DAE3500BE1060 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		75E074DC1E5DAE3500BE1060 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				75E074DB1E5DAE3500BE1060 /* airbnb-datepicker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		75E074DD1E5DAE3500BE1060 /* airbnb-datepicker */ = {
+			isa = PBXGroup;
+			children = (
+				75180D4A1E5E866800F03731 /* Extension */,
+				75180D531E5ECF0D00F03731 /* Global */,
+				75180D4B1E5E867A00F03731 /* View */,
+				75180D4C1E5E868400F03731 /* ViewController */,
+				75E074DE1E5DAE3500BE1060 /* AppDelegate.swift */,
+				75E074E21E5DAE3500BE1060 /* Main.storyboard */,
+				75E074E51E5DAE3500BE1060 /* Assets.xcassets */,
+				75E074E71E5DAE3500BE1060 /* LaunchScreen.storyboard */,
+				75E074EA1E5DAE3500BE1060 /* Info.plist */,
+			);
+			path = "airbnb-datepicker";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		75E074DA1E5DAE3500BE1060 /* airbnb-datepicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75E074ED1E5DAE3500BE1060 /* Build configuration list for PBXNativeTarget "airbnb-datepicker" */;
+			buildPhases = (
+				75E074D71E5DAE3500BE1060 /* Sources */,
+				75E074D81E5DAE3500BE1060 /* Frameworks */,
+				75E074D91E5DAE3500BE1060 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "airbnb-datepicker";
+			productName = "airbnb-datepicker";
+			productReference = 75E074DB1E5DAE3500BE1060 /* airbnb-datepicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		75E074D31E5DAE3500BE1060 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Yonas Stephen";
+				TargetAttributes = {
+					75E074DA1E5DAE3500BE1060 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8FNSQJZ54L;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 75E074D61E5DAE3500BE1060 /* Build configuration list for PBXProject "airbnb-datepicker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 75E074D21E5DAE3500BE1060;
+			productRefGroup = 75E074DC1E5DAE3500BE1060 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				75E074DA1E5DAE3500BE1060 /* airbnb-datepicker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		75E074D91E5DAE3500BE1060 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75E074E91E5DAE3500BE1060 /* LaunchScreen.storyboard in Resources */,
+				75E074E61E5DAE3500BE1060 /* Assets.xcassets in Resources */,
+				75E074E41E5DAE3500BE1060 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		75E074D71E5DAE3500BE1060 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				756033E61E680F4000B78E00 /* Utility.swift in Sources */,
+				75E074E11E5DAE3500BE1060 /* ViewController.swift in Sources */,
+				75E074F31E5DBD3100BE1060 /* UIColor.swift in Sources */,
+				75180D521E5EB4E200F03731 /* AirbnbDatePickerCell.swift in Sources */,
+				75E074F11E5DB6B200BE1060 /* AirbnbDatePicker.swift in Sources */,
+				75180D4E1E5E86C600F03731 /* AirbnbDatePickerHeader.swift in Sources */,
+				75E074F51E5DDCD700BE1060 /* AirbnbDatePickerViewController.swift in Sources */,
+				75180D491E5E865200F03731 /* BaseCell.swift in Sources */,
+				756033E41E65D4D300B78E00 /* AirbnbDatePickerFlowLayout.swift in Sources */,
+				75180D5B1E5FE80E00F03731 /* Date.swift in Sources */,
+				75180D551E5ECF2400F03731 /* Theme.swift in Sources */,
+				75180D591E5F513500F03731 /* AirbnbDatePickerFooter.swift in Sources */,
+				75E074DF1E5DAE3500BE1060 /* AppDelegate.swift in Sources */,
+				75180D501E5EB1E000F03731 /* AirbnbDatePickerMonthHeader.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		75E074E21E5DAE3500BE1060 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75E074E31E5DAE3500BE1060 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		75E074E71E5DAE3500BE1060 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75E074E81E5DAE3500BE1060 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		75E074EB1E5DAE3500BE1060 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		75E074EC1E5DAE3500BE1060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		75E074EE1E5DAE3500BE1060 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8FNSQJZ54L;
+				INFOPLIST_FILE = "airbnb-datepicker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ystephen.airbnb-datepicker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		75E074EF1E5DAE3500BE1060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8FNSQJZ54L;
+				INFOPLIST_FILE = "airbnb-datepicker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ystephen.airbnb-datepicker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		75E074D61E5DAE3500BE1060 /* Build configuration list for PBXProject "airbnb-datepicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75E074EB1E5DAE3500BE1060 /* Debug */,
+				75E074EC1E5DAE3500BE1060 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75E074ED1E5DAE3500BE1060 /* Build configuration list for PBXNativeTarget "airbnb-datepicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75E074EE1E5DAE3500BE1060 /* Debug */,
+				75E074EF1E5DAE3500BE1060 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 75E074D31E5DAE3500BE1060 /* Project object */;
+}
