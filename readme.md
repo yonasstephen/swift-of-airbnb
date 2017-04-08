@@ -1,4 +1,5 @@
-![banner](http://i.imgur.com/r93YIiC.jpg)
+
+<img src="http://i.imgur.com/r93YIiC.jpg" width="873">
 # Swift of AirBnb
 
 This is a self-taught project of learning Swift inspired by [Sam Lu's 100 Days of Swift] and [Allen Wong's 30 Days of Swift]. Trying to take the learning progress further by making some of Airbnb's screens, which in my opinion is one of the most beautifully-designed iOS App. Kudos to Airbnb for setting such high standard in iOS Development.
@@ -23,7 +24,7 @@ Things I learn:
 
 ### Project 3 - Main Screen
 
-![main screen](https://media.giphy.com/media/xUA7baONP39ncSt9aU/giphy.gif)
+![main screen](https://media.giphy.com/media/xUPGclujPdwArPBpsI/giphy.gif)
 
 Things I learn:
   - UITableView header animation (view position & alpha change as user scrolls)
@@ -42,9 +43,13 @@ This is an ongoing project and a lot of things already planned!
 
 # Resources
 [Michigan Labs]
+
 [Raywenderlich]
+
 [Pexels]
+
 [Icons 8]
+
 
 # License
 
