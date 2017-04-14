@@ -114,6 +114,7 @@ class AirbnbMainController: UITabBarController {
         // add separator line
         tabBar.clipsToBounds = true // hide default top border
         tabBar.addSubview(tabBarSeparator)
+        
         tabBarSeparator.widthAnchor.constraint(equalTo: tabBar.widthAnchor).isActive = true
         tabBarSeparator.heightAnchor.constraint(equalToConstant: 1).isActive = true
         tabBarSeparator.centerXAnchor.constraint(equalTo: tabBar.centerXAnchor).isActive = true

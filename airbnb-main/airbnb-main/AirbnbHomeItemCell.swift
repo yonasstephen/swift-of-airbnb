@@ -62,7 +62,7 @@ class AirbnbHomeItemCell: BaseCollectionCell {
         addSubview(imageView)
         
         imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 180).isActive = true
         imageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 15).isActive = true
         imageView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         

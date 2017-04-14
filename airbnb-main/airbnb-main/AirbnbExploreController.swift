@@ -12,6 +12,7 @@ class AirbnbExploreController: UIViewController {
     
     var currentPageController: UIViewController?
     var isFirstAppear: Bool = true
+    
     var minHeaderHeight: CGFloat {
         return headerView.minHeaderHeight
     }
@@ -22,6 +23,9 @@ class AirbnbExploreController: UIViewController {
         return headerView.maxHeaderHeight
     }
     var headerViewHeightConstraint: NSLayoutConstraint?
+    
+    let imageExpandAnimationController = ImageExpandAnimationController()
+    let imageShrinkAnimationController = ImageShrinkAnimationController()
     
     // MARK: - View Components
     
@@ -207,6 +211,50 @@ extension AirbnbExploreController: AirbnbExploreHeaderViewDelegate {
             self.headerView.updateHeader(newHeight: self.maxHeaderHeight, offset: self.maxHeaderHeight - oldHeight)
             self.view.layoutIfNeeded()
         })
+    }
+}
+
+
+extension AirbnbExploreController: AirbnbCategoryTableCellDelegate {
+    func categoryTableCell(_ tableCell: AirbnbCategoryTableCell, collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! AirbnbHomeItemCell
+        let frame = cell.convert(cell.imageView.frame, to: view)
+        imageExpandAnimationController.originFrame = frame
+        
+        let detailVC = AirbnbHomeDetailController()
+        detailVC.home = cell.home
+        detailVC.tableIndexPath = tableCell.indexPath
+        detailVC.cellIndexPath = indexPath
+        detailVC.transitioningDelegate = self
+        
+        tabBarController?.present(detailVC, animated: true, completion: nil)
+        //present(detailVC, animated: true, completion: nil)
+    }
+}
+
+extension AirbnbExploreController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return imageExpandAnimationController
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard let dismissed = dismissed as? AirbnbHomeDetailController,
+            let presentingVC = currentPageController as? BaseTableController else {
+            return nil
+        }
+        
+        if let presentingVC = presentingVC as? AirbnbExploreFeedController,
+            let tableIndexPath = dismissed.tableIndexPath,
+            let cellIndexPath = dismissed.cellIndexPath {
+            
+            let tableCell = presentingVC.tableView.cellForRow(at: tableIndexPath) as! AirbnbCategoryTableCell
+            let collectionCell = tableCell.collectionView.cellForItem(at: cellIndexPath) as! AirbnbHomeItemCell
+            
+            let frame = collectionCell.convert(collectionCell.imageView.frame, to: view)
+            imageShrinkAnimationController.destinationFrame = frame
+        }
+        
+        return imageShrinkAnimationController
     }
 }
 

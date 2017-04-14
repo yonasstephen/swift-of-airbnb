@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol AirbnbCategoryTableCellDelegate {
+    func categoryTableCell(_ tableCell: AirbnbCategoryTableCell, collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+}
+
 class AirbnbCategoryTableCell: BaseTableCell {
     
     let cellID = "cellID"
+    var indexPath: IndexPath?
     
     var layoutSubviewFirstTime: Bool = true
+    var delegate: AirbnbCategoryTableCellDelegate?
     
     var items: [AirbnbHome] = [AirbnbHome]() {
         didSet {
@@ -38,7 +44,7 @@ class AirbnbCategoryTableCell: BaseTableCell {
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
-        layout.itemSize = CGSize(width: 280, height: 250)
+        layout.itemSize = CGSize(width: 280, height: 230)
         
         let view = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -46,7 +52,7 @@ class AirbnbCategoryTableCell: BaseTableCell {
         view.register(AirbnbHomeItemCell.self, forCellWithReuseIdentifier: self.cellID)
         view.showsHorizontalScrollIndicator = false
         view.dataSource = self
-        
+        view.delegate = self
         return view
     }()
     
@@ -73,7 +79,6 @@ class AirbnbCategoryTableCell: BaseTableCell {
         super.layoutSubviews()
         
         if layoutSubviewFirstTime {
-            //collectionView.setContentOffset(CGPoint(x: 15, y: collectionView.contentOffset.y), animated: false)
             layoutSubviewFirstTime = false
         }
     }
@@ -91,9 +96,16 @@ extension AirbnbCategoryTableCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! AirbnbHomeItemCell
         
-        //cell.backgroundColor = UIColor(r: 231, g: 76, b: 60)
         cell.home = items[indexPath.item]
         
         return cell
+    }
+}
+
+extension AirbnbCategoryTableCell: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let del = delegate {
+            del.categoryTableCell(self, collectionView: collectionView, didSelectItemAt: indexPath)
+        }
     }
 }
