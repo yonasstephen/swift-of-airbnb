@@ -35,7 +35,7 @@ Things I learn:
 
 ### Project 4 - Custom Page Transition
 
-![page transition](https://media.giphy.com/media/xUPGcGbkRirK3V7344/giphy.gif)
+![page transition](https://media.giphy.com/media/xUPGcIN2PQiHGgxv4k/giphy.gif)
 
 Things I learn:
   - A lot from here: https://www.raywenderlich.com/110536/custom-uiviewcontroller-transitions and here: http://blog.matthewcheok.com/design-teardown-preview-expanding-cells/
