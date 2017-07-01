@@ -75,7 +75,7 @@ class BaseTableController: UIViewController {
 extension BaseTableController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let absoluteTop: CGFloat = 0
-        let absoluteBottom: CGFloat = scrollView.contentSize.height - scrollView.frame.height
+        let absoluteBottom: CGFloat = max(0, scrollView.contentSize.height - scrollView.frame.height)
         
         let scrollDif = scrollView.contentOffset.y - previousScrollOffset
         let isScrollUp = scrollDif < 0 && scrollView.contentOffset.y < absoluteBottom   // swipe down - header expands

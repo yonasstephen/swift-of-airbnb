@@ -56,8 +56,8 @@ class AirbnbMainController: UITabBarController {
         return tab
     }()
     
-    lazy var tripsController: UIViewController = {
-        let controller = UIViewController()
+    lazy var tripsController: AirbnbMapController = {
+        let controller = AirbnbMapController()
         controller.tabBarItem = self.tripsTabItem
         return controller
     }()
