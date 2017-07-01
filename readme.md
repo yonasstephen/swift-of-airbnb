@@ -33,11 +33,20 @@ Things I learn:
   - Custom page tab navigation with underline border that animates to selected page (For You, Homes, Experience, Places)
   - Nested UICollectionView inside UITableView
 
+### Project 4 - Custom Page Transition
+
+![page transition](https://media.giphy.com/media/xUPGcIN2PQiHGgxv4k/giphy.gif)
+
+Things I learn:
+  - A lot from here: https://www.raywenderlich.com/110536/custom-uiviewcontroller-transitions and here: http://blog.matthewcheok.com/design-teardown-preview-expanding-cells/
+  - How to slice and snapshot views to animate transition on present and dismiss
+  - New AirbnbReview component
+
 # Coming Soon
 
 This is an ongoing project and a lot of things already planned!
 
-- Page transition animation on selecting home item
+- ~~Page transition animation on selecting home item~~
 - The map view! (that all other booking apps copy :D)
 - Home detail screen
 - My trips screen
