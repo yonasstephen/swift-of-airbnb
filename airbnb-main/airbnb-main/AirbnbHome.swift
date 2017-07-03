@@ -12,14 +12,14 @@ class AirbnbHome {
     var imageName: String
     var homeDescription: String
     var price: Int
-    var rating: Int
+    var rating: Double
     var reviewCount: Int
     
-    init(imageName: String, description: String, price: Int, reviewCount: Int) {
+    init(imageName: String, description: String, price: Int, reviewCount: Int, rating: Double) {
         self.imageName = imageName
         self.homeDescription = description
         self.price = price
         self.reviewCount = reviewCount
-        self.rating = 5
+        self.rating = rating
     }
 }

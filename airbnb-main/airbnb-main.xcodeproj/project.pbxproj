@@ -46,6 +46,7 @@
 		756034961E75B74A00B78E00 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756034951E75B74A00B78E00 /* String.swift */; };
 		756034981E76E81100B78E00 /* BaseTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756034971E76E81100B78E00 /* BaseTableController.swift */; };
 		7560349A1E84120900B78E00 /* AirbnbExploreHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756034991E84120900B78E00 /* AirbnbExploreHomeController.swift */; };
+		75E0628F1F0A6D4500B366EC /* AirbnbMapItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E0628E1F0A6D4500B366EC /* AirbnbMapItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		756034951E75B74A00B78E00 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		756034971E76E81100B78E00 /* BaseTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableController.swift; sourceTree = "<group>"; };
 		756034991E84120900B78E00 /* AirbnbExploreHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirbnbExploreHomeController.swift; sourceTree = "<group>"; };
+		75E0628E1F0A6D4500B366EC /* AirbnbMapItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirbnbMapItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 				75069EE21E923C8A009BFC12 /* AirbnbHomeItemCell.swift */,
 				75497BF91E97965200F1B4E6 /* AirbnbHomeItemTableCell.swift */,
 				75497C371EA154DC00F1B4E6 /* AirbnbIconLabel.swift */,
+				75E0628E1F0A6D4500B366EC /* AirbnbMapItemCell.swift */,
 				756034931E75B3C600B78E00 /* AirbnbPageTabItem.swift */,
 				750233791E8BB7D000766F8A /* AirbnbPageTabNavigationView.swift */,
 				75497C331E9FA9AF00F1B4E6 /* AirbnbReview.swift */,
@@ -372,6 +375,7 @@
 				756034941E75B3C600B78E00 /* AirbnbPageTabItem.swift in Sources */,
 				7560347E1E6DCB3D00B78E00 /* AirbnbContentThumbnail.swift in Sources */,
 				756034921E75B33F00B78E00 /* BasePageTabItemView.swift in Sources */,
+				75E0628F1F0A6D4500B366EC /* AirbnbMapItemCell.swift in Sources */,
 				756034961E75B74A00B78E00 /* String.swift in Sources */,
 				7560348E1E755B9A00B78E00 /* UIImage.swift in Sources */,
 				75497C341E9FA9AF00F1B4E6 /* AirbnbReview.swift in Sources */,

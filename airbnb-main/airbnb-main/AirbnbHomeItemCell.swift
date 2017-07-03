@@ -15,7 +15,8 @@ class AirbnbHomeItemCell: BaseCollectionCell {
             imageView.image = UIImage(named: home!.imageName)
             priceLabel.text = "$\(home!.price)"
             descriptionLabel.text = home?.homeDescription
-            reviewLabel.text = "\(home!.reviewCount) Reviews"
+            reviewCountLabel.text = "\(home!.reviewCount) Reviews"
+            ratingView.rating = home!.rating
         }
     }
     
@@ -49,7 +50,13 @@ class AirbnbHomeItemCell: BaseCollectionCell {
         return view
     }()
     
-    var reviewLabel: UILabel = {
+    var ratingView: AirbnbReview = {
+        let view = AirbnbReview()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    var reviewCountLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.font = UIFont.boldSystemFont(ofSize: 10)
@@ -80,14 +87,19 @@ class AirbnbHomeItemCell: BaseCollectionCell {
         descriptionLabel.leftAnchor.constraint(equalTo: priceLabel.rightAnchor).isActive = true
         descriptionLabel.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         
-        addSubview(reviewLabel)
+        addSubview(ratingView)
         
-        reviewLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 0).isActive = true
-        reviewLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        reviewLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 15).isActive = true
-        reviewLabel.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        ratingView.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 0).isActive = true
+        ratingView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        ratingView.leftAnchor.constraint(equalTo: leftAnchor, constant: 15).isActive = true
+        ratingView.widthAnchor.constraint(equalToConstant: ratingView.starSize * CGFloat(ratingView.stars.count)).isActive = true
         
+        addSubview(reviewCountLabel)
+        
+        reviewCountLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 0).isActive = true
+        reviewCountLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        reviewCountLabel.leftAnchor.constraint(equalTo: ratingView.rightAnchor, constant: 5).isActive = true
+        reviewCountLabel.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         
     }
-    
 }

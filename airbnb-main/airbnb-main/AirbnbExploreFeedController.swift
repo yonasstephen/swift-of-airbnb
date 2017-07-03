@@ -18,7 +18,7 @@ class AirbnbExploreFeedController: BaseTableController {
         var arr = [AirbnbHome]()
         for i in 0..<4 {
             let location = self.locations[Int(arc4random_uniform(UInt32(self.locations.count)))]
-            let home = AirbnbHome(imageName: "home-" + "\(i + 1)", description: "Entire home in \(location)", price: Int(arc4random_uniform(100) + 200), reviewCount: Int(arc4random_uniform(300) + 1))
+            let home = AirbnbHome(imageName: "home-" + "\(i + 1)", description: "Entire home in \(location)", price: Int(arc4random_uniform(100) + 200), reviewCount: Int(arc4random_uniform(300) + 1), rating: Double(arc4random()) / Double(UINT32_MAX) + 4)
             arr.append(home)
         }
         return arr

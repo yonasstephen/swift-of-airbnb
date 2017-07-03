@@ -30,6 +30,10 @@ class AirbnbHomeDetailController: UIViewController {
             if let review = home?.reviewCount {
                 reviewCountLabel.text = "\(review)"
             }
+            
+            if let rating = home?.rating {
+                ratingView.rating = rating
+            }
         }
     }
     
@@ -167,10 +171,9 @@ class AirbnbHomeDetailController: UIViewController {
         return view
     }()
     
-    var reviewView: AirbnbReview = {
+    var ratingView: AirbnbReview = {
         let view = AirbnbReview()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.rating = 3.5
         return view
     }()
     
@@ -321,16 +324,16 @@ class AirbnbHomeDetailController: UIViewController {
         priceUnitLabel.topAnchor.constraint(equalTo: footerView.topAnchor, constant: 15).isActive = true
         priceUnitLabel.heightAnchor.constraint(equalTo: footerView.heightAnchor, multiplier: 1/2, constant: -15).isActive = true
         
-        footerView.addSubview(reviewView)
+        footerView.addSubview(ratingView)
         
-        reviewView.leftAnchor.constraint(equalTo: footerView.leftAnchor, constant: sideMargin / 2).isActive = true
-        reviewView.widthAnchor.constraint(equalToConstant: reviewView.starSize * CGFloat(reviewView.stars.count)).isActive = true
-        reviewView.bottomAnchor.constraint(equalTo: footerView.bottomAnchor, constant: -15).isActive = true
-        reviewView.heightAnchor.constraint(equalTo: footerView.heightAnchor, multiplier: 1/2, constant: -15).isActive = true
+        ratingView.leftAnchor.constraint(equalTo: footerView.leftAnchor, constant: sideMargin / 2).isActive = true
+        ratingView.widthAnchor.constraint(equalToConstant: ratingView.starSize * CGFloat(ratingView.stars.count)).isActive = true
+        ratingView.bottomAnchor.constraint(equalTo: footerView.bottomAnchor, constant: -15).isActive = true
+        ratingView.heightAnchor.constraint(equalTo: footerView.heightAnchor, multiplier: 1/2, constant: -15).isActive = true
         
         footerView.addSubview(reviewCountLabel)
         
-        reviewCountLabel.leftAnchor.constraint(equalTo: reviewView.rightAnchor, constant: 5).isActive = true
+        reviewCountLabel.leftAnchor.constraint(equalTo: ratingView.rightAnchor, constant: 5).isActive = true
         reviewCountLabel.rightAnchor.constraint(equalTo: checkAvailabilityButton.leftAnchor).isActive = true
         reviewCountLabel.bottomAnchor.constraint(equalTo: footerView.bottomAnchor, constant: -15).isActive = true
         reviewCountLabel.heightAnchor.constraint(equalTo: footerView.heightAnchor, multiplier: 1/2, constant: -15).isActive = true
