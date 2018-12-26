@@ -181,11 +181,11 @@ class AirbnbOccupantFilterController: UIViewController {
         self.navigationItem.setLeftBarButton(dismissButton, animated: true)
     }
     
-    func handleDismiss() {
+    @objc func handleDismiss() {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
-    func handleSave() {
+    @objc func handleSave() {
         if let del = delegate {
             
             adultCount = adultCounter.count

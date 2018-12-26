@@ -71,7 +71,7 @@ class AirbnbHomeDetailController: UIViewController {
     lazy var backButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: "handleBackPressed", for: .touchUpInside)
+        button.addTarget(self, action: #selector(AirbnbHomeDetailController.handleBackPressed), for: .touchUpInside)
         
         let img = UIImage(named: "Back")
         button.setImage(img, for: .normal)
@@ -340,7 +340,7 @@ class AirbnbHomeDetailController: UIViewController {
 
     }
     
-    func handleBackPressed() {
+    @objc func handleBackPressed() {
         dismiss(animated: true, completion: nil)
     }
 }
