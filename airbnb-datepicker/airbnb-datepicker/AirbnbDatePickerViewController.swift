@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 public protocol AirbnbDatePickerDelegate {
     func datePickerController(_ datePickerController: AirbnbDatePickerViewController, didSaveStartDate startDate: Date?, endDate: Date?)
@@ -17,7 +18,7 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
     let monthHeaderID = "monthHeaderID"
     let cellID = "cellID"
     let dateFormatter = DateFormatter()
-
+    
     var delegate: AirbnbDatePickerDelegate?
     
     var selectedStartDate: Date? {
@@ -51,7 +52,7 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
         return floor(view.frame.size.width / 7)
     }
     var collectionViewWidthConstraint: NSLayoutConstraint?
-
+    
     
     // MARK: - Initialization
     
@@ -80,7 +81,7 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(AirbnbDatePickerViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-
+        
     }
     
     deinit {
@@ -90,7 +91,7 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
     func initDates() {
         let month = calendar.component(.month, from: today)
         let year = calendar.component(.year, from: today)
-        var dateComp = DateComponents(year: year, month: month, day: 1)
+        let dateComp = DateComponents(year: year, month: month, day: 1)
         var curMonth = calendar.date(from: dateComp)
         
         months = [Date]()
@@ -172,17 +173,17 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
     
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.automaticallyAdjustsScrollViewInsets = false
+        if #available(iOS 11, *) {
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = false
+        }
         self.view.backgroundColor = Theme.PRIMARY_COLOR
-        
         setupNavigationBar()
         setupViews()
         setupLayout()
-        
     }
     
-    func rotated() {
+    @objc func rotated() {
         collectionView?.collectionViewLayout.invalidateLayout()
     }
     
@@ -221,19 +222,17 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
     }
     
     func setupCollectionView() {
+        
         collectionView?.translatesAutoresizingMaskIntoConstraints = false
         collectionView?.alwaysBounceVertical = true
         collectionView?.backgroundColor = Theme.PRIMARY_COLOR
         collectionView?.showsVerticalScrollIndicator = false
         collectionView?.allowsMultipleSelection = true
-        
         collectionView?.register(AirbnbDatePickerCell.self, forCellWithReuseIdentifier: cellID)
         collectionView?.register(AirbnbDatePickerMonthHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: monthHeaderID)
-        
         collectionView?.topAnchor.constraint(equalTo: headerSeparator.bottomAnchor).isActive = true
         collectionView?.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         collectionView?.bottomAnchor.constraint(equalTo: footerSeparator.topAnchor).isActive = true
-        
         let gap = view.frame.size.width - (itemWidth * 7)
         collectionViewWidthConstraint = collectionView?.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -gap)
         collectionViewWidthConstraint?.isActive = true
@@ -309,7 +308,7 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
         
         return cell
     }
-  
+    
     override public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: monthHeaderID, for: indexPath) as! AirbnbDatePickerMonthHeader
@@ -326,7 +325,7 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
         }
         
         return header
-    
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -342,7 +341,7 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
         let year = calendar.component(.year, from: selectedMonth)
         let month = calendar.component(.month, from: selectedMonth)
         
-        var dateComp = DateComponents(year: year, month: month, day: Int(cell.dateLabel.text!))
+        let dateComp = DateComponents(year: year, month: month, day: Int(cell.dateLabel.text!))
         let selectedDate = calendar.date(from: dateComp)!
         
         if selectedStartDate == nil || (selectedEndDate == nil && selectedDate < selectedStartDate!) {
@@ -403,7 +402,7 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
     
     override public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! AirbnbDatePickerCell
-
+        
         if isInBetween(indexPath: indexPath) {
             deselectSelectedCells()
             
@@ -412,7 +411,7 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
             let year = calendar.component(.year, from: selectedMonth)
             let month = calendar.component(.month, from: selectedMonth)
             
-            var dateComp = DateComponents(year: year, month: month, day: Int(cell.dateLabel.text!))
+            let dateComp = DateComponents(year: year, month: month, day: Int(cell.dateLabel.text!))
             let selectedDate = calendar.date(from: dateComp)!
             
             selectedStartDate = selectedDate
@@ -445,13 +444,12 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
     
     override public func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         let cell = collectionView.cellForItem(at: indexPath) as! AirbnbDatePickerCell
-
+        
         return cell.type.contains(.Date)
     }
     
     override public func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! AirbnbDatePickerCell
-        
         cell.type.remove(.Highlighted)
         cell.configureCell()
     }
@@ -460,7 +458,6 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
         let dateData = days[indexPath.section]
         let month = calendar.component(.month, from: months[indexPath.section])
         let year = calendar.component(.year, from: months[indexPath.section])
-        
         if indexPath.item < dateData.prepend || indexPath.item >= (dateData.prepend + dateData.days) {
             cell.dateLabel.text = ""
             cell.type = [.Empty]
@@ -468,20 +465,16 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
             let todayYear = calendar.component(.year, from: today)
             let todayMonth = calendar.component(.month, from: today)
             let todayDay = calendar.component(.day, from: today)
-            
             let curDay = indexPath.item - dateData.prepend + 1
             let isPastDate = year == todayYear && month == todayMonth && curDay < todayDay
-            
             cell.dateLabel.text = String(curDay)
             cell.dateLabel.textColor = isPastDate ? Theme.SECONDARY_COLOR : UIColor.white
             cell.type = isPastDate ? [.PastDate] : [.Date]
-            
             if todayDay == curDay, todayMonth == month, todayYear == year  {
                 cell.type.insert(.Today)
             }
         }
-        
-        if startDateIndexPath != nil && indexPath == startDateIndexPath {
+         if startDateIndexPath != nil && indexPath == startDateIndexPath {
             if endDateIndexPath == nil {
                 cell.type.insert(.Selected)
             } else {
@@ -537,8 +530,7 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
         }
         
         collectionView?.performBatchUpdates({
-            (s) in
-            self.collectionView?.reloadItems(at: indexPathArr)
+        self.collectionView?.reloadItems(at: indexPathArr)
         }, completion: nil)
     }
     
@@ -554,7 +546,7 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
             }
             
             if let end = endDateIndexPath {
-                var indexPathArr = [IndexPath]()
+                let indexPathArr = [IndexPath]()
                 while section < months.count, section <= end.section {
                     let curIndexPath = IndexPath(item: item, section: section)
                     if let cell = collectionView?.cellForItem(at: curIndexPath) as? AirbnbDatePickerCell {
@@ -576,8 +568,7 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
                 }
                 
                 collectionView?.performBatchUpdates({
-                    (s) in
-                    self.collectionView?.reloadItems(at: indexPathArr)
+            self.collectionView?.reloadItems(at: indexPathArr)
                 }, completion: nil)
             }
         }
@@ -585,15 +576,14 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
     
     // MARK: - Event Handlers
     
-    func handleDismiss() {
+    @objc func handleDismiss() {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
-    func handleClearInput() {
+    @objc func handleClearInput() {
         deselectSelectedCells()
         selectedStartDate = nil
         selectedEndDate = nil
-        
         startDateIndexPath = nil
         endDateIndexPath = nil
     }
@@ -602,7 +592,7 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
         let lastDate = months.last!
         let month = calendar.component(.month, from: lastDate)
         let year = calendar.component(.year, from: lastDate)
-        var dateComp = DateComponents(year: year, month: month + 1, day: 1)
+        let dateComp = DateComponents(year: year, month: month + 1, day: 1)
         var curMonth = calendar.date(from: dateComp)
         
         for _ in 0..<subsequentMonthsLoadCount {
@@ -611,10 +601,8 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
             let numOfDays = calendar.range(of: .day, in: .month, for: curMonth!)!.count
             let firstWeekDay = calendar.component(.weekday, from: curMonth!.startOfMonth())
             let lastWeekDay = calendar.component(.weekday, from: curMonth!.endOfMonth())
-            
             days.append((days: numOfDays, prepend: firstWeekDay - 1, append: 7 - lastWeekDay))
             curMonth = calendar.date(byAdding: .month, value: 1, to: curMonth!)
-            
         }
         
         if let handler = completion {
