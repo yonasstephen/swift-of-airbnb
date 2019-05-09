@@ -90,7 +90,7 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
     func initDates() {
         let month = calendar.component(.month, from: today)
         let year = calendar.component(.year, from: today)
-        var dateComp = DateComponents(year: year, month: month, day: 1)
+        let dateComp = DateComponents(year: year, month: month, day: 1)
         var curMonth = calendar.date(from: dateComp)
         
         months = [Date]()
@@ -173,7 +173,10 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.automaticallyAdjustsScrollViewInsets = false
+        if #available(iOS 11, *) {
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = false
+        }
         self.view.backgroundColor = Theme.PRIMARY_COLOR
         
         setupNavigationBar()
@@ -182,7 +185,7 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
         
     }
     
-    func rotated() {
+    @objc func rotated() {
         collectionView?.collectionViewLayout.invalidateLayout()
     }
     
@@ -342,7 +345,7 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
         let year = calendar.component(.year, from: selectedMonth)
         let month = calendar.component(.month, from: selectedMonth)
         
-        var dateComp = DateComponents(year: year, month: month, day: Int(cell.dateLabel.text!))
+        let dateComp = DateComponents(year: year, month: month, day: Int(cell.dateLabel.text!))
         let selectedDate = calendar.date(from: dateComp)!
         
         if selectedStartDate == nil || (selectedEndDate == nil && selectedDate < selectedStartDate!) {
@@ -412,7 +415,7 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
             let year = calendar.component(.year, from: selectedMonth)
             let month = calendar.component(.month, from: selectedMonth)
             
-            var dateComp = DateComponents(year: year, month: month, day: Int(cell.dateLabel.text!))
+            let dateComp = DateComponents(year: year, month: month, day: Int(cell.dateLabel.text!))
             let selectedDate = calendar.date(from: dateComp)!
             
             selectedStartDate = selectedDate
@@ -537,7 +540,6 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
         }
         
         collectionView?.performBatchUpdates({
-            (s) in
             self.collectionView?.reloadItems(at: indexPathArr)
         }, completion: nil)
     }
@@ -554,7 +556,7 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
             }
             
             if let end = endDateIndexPath {
-                var indexPathArr = [IndexPath]()
+                let indexPathArr = [IndexPath]()
                 while section < months.count, section <= end.section {
                     let curIndexPath = IndexPath(item: item, section: section)
                     if let cell = collectionView?.cellForItem(at: curIndexPath) as? AirbnbDatePickerCell {
@@ -576,7 +578,6 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
                 }
                 
                 collectionView?.performBatchUpdates({
-                    (s) in
                     self.collectionView?.reloadItems(at: indexPathArr)
                 }, completion: nil)
             }
@@ -585,11 +586,11 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
     
     // MARK: - Event Handlers
     
-    func handleDismiss() {
+    @objc func handleDismiss() {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
-    func handleClearInput() {
+    @objc func handleClearInput() {
         deselectSelectedCells()
         selectedStartDate = nil
         selectedEndDate = nil
@@ -602,7 +603,7 @@ public class AirbnbDatePickerViewController: UICollectionViewController {
         let lastDate = months.last!
         let month = calendar.component(.month, from: lastDate)
         let year = calendar.component(.year, from: lastDate)
-        var dateComp = DateComponents(year: year, month: month + 1, day: 1)
+        let dateComp = DateComponents(year: year, month: month + 1, day: 1)
         var curMonth = calendar.date(from: dateComp)
         
         for _ in 0..<subsequentMonthsLoadCount {

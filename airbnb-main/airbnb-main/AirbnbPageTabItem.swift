@@ -68,7 +68,7 @@ class AirbnbPageTabItem: BasePageTabItemView {
         titleButton.widthAnchor.constraint(equalTo: widthAnchor, constant: -30).isActive = true
     }
     
-    func didSelect() {
+    @objc func didSelect() {
         if let handler = delegate {
             handler.didSelect(tabItem: self, completion: nil)
         }

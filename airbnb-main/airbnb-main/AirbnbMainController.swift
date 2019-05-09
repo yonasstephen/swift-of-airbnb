@@ -13,8 +13,8 @@ class AirbnbMainController: UITabBarController {
     let AIRBNB_COLOR = UIColor(r: 255, g: 90, b: 95)
     
     var tabBarHeight: CGFloat = 60
-    var tabBarTextAttributesNormal = [NSFontAttributeName: UIFont.systemFont(ofSize: 8), NSForegroundColorAttributeName: UIColor.black]
-    var tabBarTextAttributesSelected = [NSFontAttributeName: UIFont.systemFont(ofSize: 8), NSForegroundColorAttributeName: UIColor(r: 255, g: 90, b: 95)]
+    var tabBarTextAttributesNormal = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 8), NSAttributedStringKey.foregroundColor: UIColor.black]
+    var tabBarTextAttributesSelected = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 8), NSAttributedStringKey.foregroundColor: UIColor(r: 255, g: 90, b: 95)]
     
     var tabBarSeparator: UIView = {
         let view = UIView()

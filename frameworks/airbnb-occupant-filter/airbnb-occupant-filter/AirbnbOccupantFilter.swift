@@ -57,7 +57,7 @@ public class AirbnbOccupantFilter: UIView {
         
     }
     
-    func showOccupantFilter() {
+    @objc func showOccupantFilter() {
         let occupantController = AirbnbOccupantFilterController(adultCount: adultCount, childrenCount: childrenCount, infantCount: infantCount, hasPet: hasPet)
         occupantController.delegate = self
         let navigationController = UINavigationController(rootViewController: occupantController)

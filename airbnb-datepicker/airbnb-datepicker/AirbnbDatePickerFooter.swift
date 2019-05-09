@@ -55,7 +55,7 @@ class AirbnbDatePickerFooter: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func handleSave() {
+    @objc func handleSave() {
         if let del = delegate {
             del.didSave()
         }

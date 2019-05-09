@@ -61,7 +61,7 @@ public class AirbnbDatePicker: UIView, AirbnbDatePickerDelegate {
         dateInputButton.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
     }
     
-    func showDatePicker() {
+    @objc func showDatePicker() {
         let datePickerViewController = AirbnbDatePickerViewController(dateFrom: selectedStartDate, dateTo: selectedEndDate)
         datePickerViewController.delegate = self
         let navigationController = UINavigationController(rootViewController: datePickerViewController)

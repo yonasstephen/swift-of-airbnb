@@ -12,10 +12,10 @@ extension UIColor {
     convenience init(hex: String) {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         if (cString.hasPrefix("#")) {
-            cString = cString.substring(from: cString.index(cString.startIndex, offsetBy: 1))
+            cString = String(cString.suffix(from: cString.startIndex))
         }
         
-        if ((cString.characters.count) != 6) {
+        if ((cString.count) != 6) {
             self.init()
         } else {
             var rgbValue:UInt32 = 0

@@ -143,7 +143,7 @@ class AirbnbSwitch: UIView {
         subCaptionLabel.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
     }
     
-    func toggle() {
+    @objc func toggle() {
         state = !state
     }
 }

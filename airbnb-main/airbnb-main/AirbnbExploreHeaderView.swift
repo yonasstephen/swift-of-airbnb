@@ -293,11 +293,11 @@ class AirbnbExploreHeaderView: UIView {
         }
     }
     
-    func handleCollapse() {
+    @objc func handleCollapse() {
         pageTabDelegate?.didCollapseHeader(completion: nil)
     }
     
-    func handleExpand() {
+    @objc func handleExpand() {
         pageTabDelegate?.didExpandHeader(completion: nil)
     }
 }
